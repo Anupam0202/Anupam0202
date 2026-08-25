@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<title id="title">Anupam Roy — AI Systems Observatory</title>
+<desc id="desc">A geometric mission-control banner showing Anupam Roy at the center of agentic AI, retrieval, cloud, automation, security, and data systems.</desc><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14263A"/><stop offset="1" stop-color="#101821"/></linearGradient>
+  <radialGradient id="core"><stop offset="0" stop-color="#5E9FE8" stop-opacity=".45"/><stop offset="1" stop-color="#5E9FE8" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+    .mono { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing: 1.8px; }
+    .orbit { animation: spin 22s linear infinite; transform-origin: 910px 258px; }
+    .orbit.reverse { animation-direction: reverse; animation-duration: 30s; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; transform-origin: 910px 258px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity:.45; transform:scale(.94); } 50% { opacity:.9; transform:scale(1.04); } }
+    @media (prefers-reduced-motion: reduce) { .orbit,.pulse { animation:none; } }
+  </style>
+</defs>
+<rect x="1" y="1" width="1198" height="518" rx="24" fill="url(#bg)" stroke="#26384A" stroke-width="2"/>
+<g opacity=".36" stroke="#26384A" stroke-width="1"><path d="M40 0V520"/><path d="M80 0V520"/><path d="M120 0V520"/><path d="M160 0V520"/><path d="M200 0V520"/><path d="M240 0V520"/><path d="M280 0V520"/><path d="M320 0V520"/><path d="M360 0V520"/><path d="M400 0V520"/><path d="M440 0V520"/><path d="M480 0V520"/><path d="M520 0V520"/><path d="M560 0V520"/><path d="M600 0V520"/><path d="M640 0V520"/><path d="M680 0V520"/><path d="M720 0V520"/><path d="M760 0V520"/><path d="M800 0V520"/><path d="M840 0V520"/><path d="M880 0V520"/><path d="M920 0V520"/><path d="M960 0V520"/><path d="M1000 0V520"/><path d="M1040 0V520"/><path d="M1080 0V520"/><path d="M1120 0V520"/><path d="M1160 0V520"/><path d="M0 40H1200"/><path d="M0 80H1200"/><path d="M0 120H1200"/><path d="M0 160H1200"/><path d="M0 200H1200"/><path d="M0 240H1200"/><path d="M0 280H1200"/><path d="M0 320H1200"/><path d="M0 360H1200"/><path d="M0 400H1200"/><path d="M0 440H1200"/><path d="M0 480H1200"/></g><rect x="50" y="47" width="162" height="34" rx="17" fill="#162231" stroke="#26384A"/>
+<circle cx="70" cy="64" r="5" fill="#72BC8F"/><text x="84" y="69" class="mono" font-size="12" font-weight="700" fill="#F4F7FA">SYSTEMS ONLINE</text>
+<text x="52" y="144" class="mono" font-size="14" font-weight="700" fill="#5E9FE8">AI SYSTEMS OBSERVATORY / 0202</text>
+<text x="52" y="211" font-size="57" font-weight="800" fill="#F4F7FA">ANUPAM ROY</text>
+<text x="54" y="252" font-size="23" font-weight="650" fill="#A8B6C5">Production AI &amp; ML Engineer</text>
+<text x="54" y="306" font-size="18" fill="#F4F7FA">I turn operational noise into governed action—</text>
+<text x="54" y="336" font-size="18" fill="#F4F7FA">with agents, retrieval, automation, and resilient APIs.</text>
+<g transform="translate(52 382)">
+  <rect width="112" height="36" rx="8" fill="#111923" stroke="#26384A"/><text x="56" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#F4F7FA">AGENTIC AI</text>
+  <rect x="124" width="82" height="36" rx="8" fill="#111923" stroke="#26384A"/><text x="165" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#F4F7FA">RAG</text>
+  <rect x="218" width="92" height="36" rx="8" fill="#111923" stroke="#26384A"/><text x="264" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#F4F7FA">CLOUD</text>
+  <rect x="322" width="132" height="36" rx="8" fill="#111923" stroke="#26384A"/><text x="388" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#F4F7FA">AUTOMATION</text>
+</g>
+<text x="52" y="472" class="mono" font-size="12" fill="#A8B6C5">KOLKATA, INDIA  •  BUILDING SINCE 2022  •  OPEN TO HIGH-IMPACT AI ROLES</text>
+
+<!-- observatory -->
+<circle cx="910" cy="258" r="180" fill="url(#core)" class="pulse"/>
+<ellipse cx="910" cy="258" rx="212" ry="88" fill="none" stroke="#26384A" stroke-width="1.5" stroke-dasharray="5 8"/>
+<ellipse cx="910" cy="258" rx="148" ry="148" fill="none" stroke="#26384A" stroke-width="1.5"/>
+<ellipse cx="910" cy="258" rx="96" ry="174" fill="none" stroke="#26384A" stroke-width="1.5" stroke-dasharray="3 7" transform="rotate(42 910 258)"/>
+<g class="orbit"><circle cx="698" cy="258" r="6" fill="#5E9FE8"/><circle cx="1122" cy="258" r="4" fill="#72BC8F"/></g>
+<g class="orbit reverse"><circle cx="910" cy="110" r="5" fill="#DE9255"/><circle cx="910" cy="406" r="5" fill="#B996D8"/></g>
+<polygon points="910,187 971,222 971,292 910,327 849,292 849,222" fill="#111923" stroke="#5E9FE8" stroke-width="2" filter="url(#glow)"/>
+<text x="910" y="244" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#A8B6C5">ENGINEERING</text>
+<text x="910" y="273" text-anchor="middle" font-size="22" font-weight="800" fill="#F4F7FA">SYSTEMS</text>
+<text x="910" y="296" text-anchor="middle" class="mono" font-size="11" fill="#72BC8F">THAT SHIP</text>
+<rect x="706.0" y="127" width="84" height="36" rx="18" fill="#111923" stroke="#5E9FE8"/><circle cx="722.0" cy="145" r="4" fill="#5E9FE8"/><text x="755.0" y="149" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">AGENTS</text><rect x="1012.5" y="131" width="111" height="36" rx="18" fill="#111923" stroke="#72BC8F"/><circle cx="1028.5" cy="149" r="4" fill="#72BC8F"/><text x="1075.0" y="153" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">RETRIEVAL</text><rect x="1071.0" y="300" width="80" height="36" rx="18" fill="#111923" stroke="#DE9255"/><circle cx="1087.0" cy="318" r="4" fill="#DE9255"/><text x="1118.0" y="322" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">CLOUD</text><rect x="1034.0" y="366" width="102" height="36" rx="18" fill="#111923" stroke="#B996D8"/><circle cx="1050.0" cy="384" r="4" fill="#B996D8"/><text x="1092.0" y="388" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">SECURITY</text><rect x="704.0" y="388" width="120" height="36" rx="18" fill="#111923" stroke="#72BC8F"/><circle cx="720.0" cy="406" r="4" fill="#72BC8F"/><text x="771.0" y="410" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">AUTOMATION</text><rect x="649.0" y="285" width="80" height="36" rx="18" fill="#111923" stroke="#5E9FE8"/><circle cx="665.0" cy="303" r="4" fill="#5E9FE8"/><text x="696.0" y="307" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#F4F7FA">DATA</text><rect x="1010" y="49" width="142" height="54" rx="10" fill="#111923" stroke="#26384A"/>
+<text x="1026" y="70" class="mono" font-size="10" fill="#A8B6C5">TURNAROUND</text><text x="1026" y="91" font-size="19" font-weight="800" fill="#72BC8F">≈20% faster</text>
+<rect x="1010" y="427" width="142" height="54" rx="10" fill="#111923" stroke="#26384A"/>
+<text x="1026" y="448" class="mono" font-size="10" fill="#A8B6C5">SME DEPENDENCY</text><text x="1026" y="469" font-size="19" font-weight="800" fill="#5E9FE8">≈50% lower</text>
+</svg>
