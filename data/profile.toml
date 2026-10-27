@@ -1,0 +1,1003 @@
+# Single source of truth for the generated profile assets.
+#
+# Edit this file, then run:   python3 scripts/build.py
+# The build regenerates every SVG in assets/ and the CERTIFICATIONS.md vault.
+# README.md is hand-written; keep its numbers in sync with this file.
+
+[person]
+name = "Anupam Roy"
+handle = "Anupam0202"
+role = "AI/ML Analyst"
+employer = "Accenture"
+location = "Kolkata, India"
+status = "Open to high-impact AI roles"
+email = "anupam020202@gmail.com"
+portfolio = "https://anupam-roy.vercel.app/"
+linkedin = "https://www.linkedin.com/in/anupam--roy/"
+github = "https://github.com/Anupam0202"
+credly = "https://www.credly.com/users/anupam_roy/"
+codechef = "https://www.codechef.com/users/anupam_roy"
+
+# ---------------------------------------------------------------------------
+# Hero metrics (shown in the banner)
+# ---------------------------------------------------------------------------
+[[metrics]]
+value = "≈20%"
+label = "faster turnaround"
+accent = "green"
+
+[[metrics]]
+value = "≈50%"
+label = "less SME dependency"
+accent = "teal"
+
+[[metrics]]
+value = "74"
+label = "certifications"
+accent = "amber"
+
+# ---------------------------------------------------------------------------
+# Career timeline
+# ---------------------------------------------------------------------------
+[[timeline]]
+when = "2016"
+title = "Class X"
+detail = "WBBSE · 84%"
+kind = "edu"
+
+[[timeline]]
+when = "2018"
+title = "Class XII"
+detail = "Science · PCM + CS · WBCHSE"
+kind = "edu"
+
+[[timeline]]
+when = "2018–22"
+title = "B.Tech, CSE"
+detail = "GPA 9.14/10 · MAKAUT"
+kind = "edu"
+
+[[timeline]]
+when = "Aug 2022"
+title = "Associate Software Engineer"
+detail = "Accenture · Java · Spring Boot · AWS Lambda"
+kind = "work"
+
+[[timeline]]
+when = "Dec 2023"
+title = "AI/ML Analyst"
+detail = "Accenture · LangGraph · RAG · multi-agent AI"
+kind = "work"
+current = true
+
+[[timeline]]
+when = "2024"
+title = "Credly Top Badge Earner"
+detail = "Recognised among the year's top earners"
+kind = "award"
+
+[[timeline]]
+when = "2026"
+title = "74 certifications"
+detail = "18 public builds"
+kind = "award"
+
+# ---------------------------------------------------------------------------
+# Experience system map (AI/ML Analyst role). Client system names are left
+# out on purpose; this describes capabilities, not confidential details.
+# ---------------------------------------------------------------------------
+[experience]
+eyebrow = "ACCENTURE · AI/ML ANALYST · DEC 2023 – PRESENT"
+title = "Enterprise AI Operational Assistant"
+subtitle = "A production multi-agent GenAI platform that replaced SME-heavy support, testing and release work."
+sources = [
+  ["Jira", "tickets · incidents"],
+  ["Confluence", "runbooks · design docs"],
+  ["SharePoint", "knowledge base"],
+  ["GitHub", "commits · releases"],
+  ["Splunk", "production logs"],
+  ["Databases", "SQL · Databricks"],
+]
+chat = ["Chat interface", "context-aware sessions · MongoDB"]
+router = ["LangGraph orchestrator", "intent routing + semantic retrieval"]
+agents = ["Incident", "Problem", "Release", "Service request"]
+engines = [
+  ["RAG knowledge", "index · vector search"],
+  ["RCA engine", "logs × past incidents"],
+  ["SQL analyst", "docs → executable SQL"],
+  ["Test generator", "docs → test scripts"],
+]
+strip = "PYTHON · LANGCHAIN · LANGGRAPH · MONGODB · POSTGRESQL · DATABRICKS"
+outcomes = [
+  ["Resolution steps", "root cause + fix"],
+  ["Test suites", "Selenium · UFT · Karate"],
+  ["Release packs", "notes · deploy · rollback"],
+  ["ServiceNow tickets", "created from chat"],
+  ["SQL fixes", "impacted tables found"],
+  ["SOX reports", "anomalies · audit-ready"],
+]
+impact = [
+  ["≈20%", "faster turnaround"],
+  ["≈50%", "less SME dependency"],
+  ["4 agents", "behind one conversational interface"],
+]
+
+# ---------------------------------------------------------------------------
+# Projects. Facts come from the repository review of 26 Oct 2026; test counts
+# are definitions counted in each repository unless "tests_run" is true.
+# ---------------------------------------------------------------------------
+[[projects]]
+id = "nexusrag"
+tier = "flagship"
+name = "NexusRAG"
+repo = "https://github.com/Anupam0202/NexusRAG"
+tagline = "Cite-or-abstain document research on a tenant-scoped edge runtime."
+lanes = [
+  ["Next.js 16", "frontend on Cloudflare"],
+  ["Gateway", "tenant-scoped API"],
+  ["Supabase", "auth · records · storage"],
+  ["Qdrant", "vectors fenced by workspace"],
+  ["Gemini", "quota + budget gated"],
+  ["Citation gate", "cite every claim or abstain"],
+]
+points = [
+  "Hybrid lexical + dense retrieval, rank-blended per workspace",
+  "Research lane: BM25 + RRF, cross-encoder rerank, semantic cache",
+  "Eval harness: recall@k, MRR, nDCG, citation precision, leakage",
+  "Per-account Gemini keys sealed with AES-GCM; fails closed",
+]
+stats = [["465", "tests"], ["72", "test files"], ["5", "CI workflows"], ["MIT", "licence"]]
+stack = ["Next.js 16", "Cloudflare Workers", "Supabase", "Qdrant", "Gemini", "FastAPI", "Python", "TypeScript"]
+
+[[projects]]
+id = "proof-atlas"
+tier = "flagship"
+name = "Proof Atlas"
+repo = "https://github.com/Anupam0202/Anupam_Roy"
+site = "https://anupam-roy.vercel.app/"
+tagline = "A portfolio where every claim links to evidence, and its AI must cite it."
+lanes = [
+  ["Astro 7", "static pages + React islands"],
+  ["Hashed CSP", "on every page"],
+  ["Express 5 API", "as Vercel functions"],
+  ["Egress guard", "timeouts · caps · budgets"],
+  ["Ask the Atlas", "answers cite the ledger"],
+  ["Evidence ledger", "every key claim, sourced"],
+]
+points = [
+  "Proof Workbench: repo evidence graph and in-browser document search",
+  "Citation integrity checks across Crossref and DataCite",
+  "Engineering Lab: RRF, binary search, Dijkstra, architecture x-ray",
+  "Full-history secret scan; mobile Lighthouse a11y and SEO gates",
+]
+stats = [["371", "unit + integration"], ["1,791", "Playwright E2E"], ["430", "prod smoke checks"], ["≥0.95", "Lighthouse a11y"]]
+tests_run = true
+stack = ["Astro", "React", "TypeScript", "Express 5", "Vercel", "Vitest", "Playwright", "Gemini"]
+
+[[projects]]
+id = "cutline"
+tier = "featured"
+group = "agents"
+name = "CUTLINE"
+repo = "https://github.com/Anupam0202/cutline"
+tagline = "Fact-check approvals that expire the moment the script changes."
+points = [
+  "SHA-256 fingerprints bind each review to cue, evidence and edit",
+  "Gemini on Vertex AI judges only the excerpts search returned",
+  "A state machine owns transitions: research proposes, never approves",
+]
+stats = [["30", "tests"], ["Cloud Run", "deploy"], ["MIT", "licence"]]
+stack = ["Python 3.12", "FastAPI", "Vertex AI", "Google ADK", "Firestore"]
+accent = "violet"
+
+[[projects]]
+id = "food-bank-recall"
+tier = "featured"
+group = "agents"
+name = "Food-Bank Recall Closure Agent"
+short = "Recall Closure Agent"
+repo = "https://github.com/Anupam0202/food-bank-recall-closure-agent"
+tagline = "From a recall notice to verified closure across every partner pantry."
+points = [
+  "Exact UPC + lot match decides; partial matches go to people",
+  "ADK coordinator limited to eight allowlisted tools",
+  "Idempotent IDs survive Pub/Sub redelivery; hash-chained audit",
+]
+stats = [["92", "tests"], ["Cloud Run", "+ Pub/Sub"], ["MIT", "licence"]]
+stack = ["Python 3.12", "Google ADK", "Gemini", "Firestore", "Pub/Sub"]
+accent = "green"
+
+[[projects]]
+id = "raceproof"
+tier = "featured"
+group = "agents"
+name = "RaceProof"
+repo = "https://github.com/Anupam0202/raceproof"
+tagline = "Turns a flaky JVM concurrency bug into a replayable, verified repair."
+points = [
+  "Controlled scheduler replays interleavings; ddmin minimizes them",
+  "Source-linked causal witness, then a protected verifier",
+  "Gemini only diagnoses and proposes; a human signs off",
+]
+stats = [["48", "tests"], ["Java", "target harness"], ["MIT", "licence"]]
+stack = ["Python", "Java", "Gemini", "Docker", "Make"]
+accent = "amber"
+
+[[projects]]
+id = "boxshield-arena"
+tier = "featured"
+group = "agents"
+name = "BoxShield Arena"
+repo = "https://github.com/Anupam0202/boxshield-arena"
+tagline = "Red-teams AI agents and measures what each guardrail costs."
+points = [
+  "Bounded attack corpus against a sandboxed synthetic agent",
+  "Allowlisted guardrail patches; HMAC-signed run capsules",
+  "Recorded replay: safety 26 → 89 with utility 100 → 80",
+]
+stats = [["60", "TestBox tests"], ["Replay", "mode"], ["Apache-2.0", "licence"]]
+stack = ["BoxLang", "bx-ai", "TestBox", "Java 21", "Docker"]
+accent = "pink"
+
+[[projects]]
+id = "pantryproof"
+tier = "featured"
+group = "products"
+name = "PantryProof"
+repo = "https://github.com/Anupam0202/pantryproof"
+site = "https://pantryproof.vercel.app"
+tagline = "Proves a food recall is closed everywhere, with a server-gated PDF."
+points = [
+  "Exact UPC/GTIN + lot policy marks stock; similarity only routes",
+  "Nutrient DWS extraction with citations, promoted by a person",
+  "Closure PDF carries the audit trail and a SHA-256 manifest",
+]
+stats = [["26", "tests"], ["SHA-256", "manifest"], ["Vercel", "deploy"]]
+stack = ["TypeScript", "Node.js", "Nutrient DWS", "SerpApi", "Vercel"]
+accent = "teal"
+
+[[projects]]
+id = "ahawin"
+tier = "featured"
+group = "products"
+name = "AhaWin"
+repo = "https://github.com/Anupam0202/ahawin"
+tagline = "A STEM reflection coach that refuses to invent a misconception."
+points = [
+  "No reasoning in the photo? A missing-evidence route, not a guess",
+  "At most two Gemini attempts, schema-validated, numbers re-checked",
+  "Redis reservations and daily quotas fail closed on cost",
+]
+stats = [["108", "tests"], ["Vercel", "deploy"], ["MIT", "licence"]]
+stack = ["JavaScript", "Node.js 24", "Gemini", "Upstash Redis", "KaTeX"]
+accent = "blue"
+
+[[projects]]
+id = "plantpal"
+tier = "featured"
+group = "products"
+name = "PlantPal"
+repo = "https://github.com/Anupam0202/PlantPal"
+tagline = "Hyperlocal planting advice from five open environmental data sources."
+points = [
+  "Open-Meteo, SoilGrids, GBIF, elevation and sun data in parallel",
+  "CMIP6 climate projection with freshness-aware caching",
+  "Plant Doctor photo review and garden tools powered by Gemini",
+]
+stats = [["5", "data providers"], ["CMIP6", "climate"], ["React 19", "+ Vite"]]
+stack = ["React 19", "TypeScript", "Vite", "Tailwind", "Gemini"]
+accent = "green"
+
+[[projects]]
+id = "mavunoguard"
+tier = "featured"
+group = "products"
+name = "MavunoGuard AI"
+repo = "https://github.com/Anupam0202/mavunoguard-ai"
+tagline = "A maize-grain photo becomes an explainable, bilingual risk plan."
+points = [
+  "Gemini photo review under a strict JSON schema",
+  "Transparent rule engine shows every weighted risk factor",
+  "English and Kiswahili plans plus a printable batch passport",
+]
+stats = [["0", "runtime deps"], ["2", "languages"], ["MIT", "licence"]]
+stack = ["Node.js", "Gemini", "HTML", "CSS"]
+accent = "amber"
+
+# ---------------------------------------------------------------------------
+# Achievements (clickable cards)
+# ---------------------------------------------------------------------------
+[[achievements]]
+id = "credly-top"
+kicker = "CREDLY · 2024"
+title = "Top Badge Earner"
+detail = "Recognised among Credly's top badge earners of the year"
+url = "https://www.credly.com/badges/3d899907-7a72-4cac-80d0-c7f80d9a892c/public_url"
+cta = "Verify the badge"
+accent = "amber"
+glyph = "medal"
+
+[[achievements]]
+id = "badges"
+kicker = "CREDLY PROFILE"
+title = "180+ digital badges"
+detail = "Cloud, AI, data and security, all publicly verifiable"
+url = "https://www.credly.com/users/anupam_roy/"
+cta = "Browse the collection"
+accent = "blue"
+glyph = "hex"
+
+[[achievements]]
+id = "gcp-legend"
+kicker = "GOOGLE CLOUD"
+title = "Arcade Legend"
+detail = "4 straight seasons · 3/3 Technical Expert badges · Early Adopter"
+url = "https://www.linkedin.com/posts/anupam--roy_googlecloud-gcp-learninganddevelopment-activity-7385948527765639168-SuDJ"
+cta = "Read the story"
+accent = "green"
+glyph = "cloud"
+
+[[achievements]]
+id = "codechef"
+kicker = "COMPETITIVE PROGRAMMING"
+title = "CodeChef 5★"
+detail = "Rated 2109 on CodeChef"
+url = "https://www.codechef.com/users/anupam_roy"
+cta = "See the profile"
+accent = "violet"
+glyph = "star"
+
+# ---------------------------------------------------------------------------
+# Stack. "work" = used in production at Accenture; "repo" = in public repos.
+# ---------------------------------------------------------------------------
+[[stack]]
+layer = "AI & LLM systems"
+work = ["LangGraph", "LangChain", "RAG pipelines", "Vector search", "Prompt engineering"]
+repo = ["Gemini API", "Vertex AI", "Google ADK", "Qdrant", "FAISS + BM25", "Cross-encoders", "TensorFlow"]
+
+[[stack]]
+layer = "Backend & APIs"
+work = ["Python", "Core Java", "Spring Boot", "REST microservices"]
+repo = ["FastAPI", "Node.js", "Express", "WebSockets"]
+
+[[stack]]
+layer = "Data"
+work = ["MongoDB", "PostgreSQL", "Databricks", "SQL generation"]
+repo = ["Supabase", "Firestore", "Upstash Redis"]
+
+[[stack]]
+layer = "Cloud & platform"
+work = ["AWS Lambda", "AWS CodeBuild"]
+repo = ["Cloud Run", "Pub/Sub", "Cloudflare Workers", "Vercel", "Docker"]
+
+[[stack]]
+layer = "Frontend"
+work = ["Chat-based assistant UI"]
+repo = ["React", "Next.js", "TypeScript", "Astro", "Tailwind", "Streamlit"]
+
+[[stack]]
+layer = "Quality & delivery"
+work = ["CI/CD", "JUnit", "SonarQube", "Selenium", "UFT", "Karate"]
+repo = ["GitHub Actions", "Playwright", "Vitest", "gitleaks"]
+
+[[stack]]
+layer = "Enterprise integrations"
+work = ["Jira", "ServiceNow", "Confluence", "SharePoint", "Splunk", "GitHub"]
+repo = []
+
+# ---------------------------------------------------------------------------
+# Certifications, in "atomic" order: lightest (fundamentals) to heaviest
+# (expert). The position in this list is the tile number on the periodic
+# table. Optional: drop a PDF at certificates/<id>.pdf and the vault links it.
+# levels: fundamentals | associate | specialty | professional | expert
+# ---------------------------------------------------------------------------
+
+# --- Fundamentals ----------------------------------------------------------
+[[certifications]]
+id = "az-900"
+code = "AZ-900"
+name = "Azure Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B120773C1846A17?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "ai-900"
+code = "AI-900"
+name = "Azure AI Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/1CFE13ABC4888ED6?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-900"
+code = "DP-900"
+name = "Azure Data Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/3884E398D8364524?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "sc-900"
+code = "SC-900"
+name = "Security, Compliance & Identity Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/FBF4BC569BB1E212?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-900"
+code = "PL-900"
+name = "Power Platform Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/63CE8D63F6154129?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "ms-900"
+code = "MS-900"
+name = "Microsoft 365 Fundamentals"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/2E020411669424B5?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-910"
+code = "MB-910"
+name = "Dynamics 365 Fundamentals (CRM)"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/3CB039D711EC3B20?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-920"
+code = "MB-920"
+name = "Dynamics 365 Fundamentals (ERP)"
+issuer = "microsoft"
+level = "fundamentals"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/A84FD8DAFD442D14?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "aws-clf"
+code = "CLF"
+name = "AWS Certified Cloud Practitioner"
+issuer = "aws"
+level = "fundamentals"
+url = "https://www.credly.com/badges/c66f5645-8a07-449d-b2ac-7629e892702a/public_url"
+
+[[certifications]]
+id = "gcp-cdl"
+code = "CDL"
+name = "Cloud Digital Leader"
+issuer = "google"
+level = "fundamentals"
+url = "https://www.credly.com/badges/fc7bde6f-a96b-4ab8-846d-ef8c22cf11b7/public_url"
+
+[[certifications]]
+id = "gcp-gail"
+code = "GAIL"
+name = "Generative AI Leader"
+issuer = "google"
+level = "fundamentals"
+url = "https://www.credly.com/badges/4b01e73a-8e53-4d6c-97ed-c0a249b4e086/public_url"
+
+# --- Associate -------------------------------------------------------------
+[[certifications]]
+id = "aws-mla"
+code = "MLA"
+name = "AWS Certified Machine Learning Engineer – Associate"
+issuer = "aws"
+level = "associate"
+url = "https://www.credly.com/badges/abba82dd-73e2-46b7-967c-2ddbbfe40126/public_url"
+signature = true
+
+[[certifications]]
+id = "claude-architect"
+code = "CCA"
+name = "Claude Certified Architect – Foundations"
+issuer = "anthropic"
+level = "associate"
+url = "https://verify.skilljar.com/c/v3bg7pbc87fn"
+signature = true
+
+[[certifications]]
+id = "databricks-genai"
+code = "GENAI"
+name = "Databricks Certified Generative AI Engineer Associate"
+issuer = "databricks"
+level = "associate"
+url = "https://credentials.databricks.com/65e9a608-48dd-43e8-8f63-134231a861a3"
+signature = true
+
+[[certifications]]
+id = "databricks-de"
+code = "DE"
+name = "Databricks Certified Data Engineer Associate"
+issuer = "databricks"
+level = "associate"
+url = "https://credentials.databricks.com/42c2f101-be3c-4ecc-8ae4-ab4959b14ef7"
+
+[[certifications]]
+id = "gcp-ace"
+code = "ACE"
+name = "Associate Cloud Engineer"
+issuer = "google"
+level = "associate"
+url = "https://www.credly.com/badges/3b6ff1dd-7e4d-4763-8ae9-72df6a479cdf/public_url"
+
+[[certifications]]
+id = "gcp-adp"
+code = "ADP"
+name = "Associate Data Practitioner"
+issuer = "google"
+level = "associate"
+url = "https://www.credly.com/badges/34d0cf23-4279-42df-b258-ca2fc211e987/public_url"
+
+[[certifications]]
+id = "gcp-agwa"
+code = "AGWA"
+name = "Associate Google Workspace Administrator"
+issuer = "google"
+level = "associate"
+url = "https://www.credly.com/badges/080d4d45-da7e-4ec9-9591-0eb283887c28/public_url"
+
+[[certifications]]
+id = "snowpro-core"
+code = "COF"
+name = "SnowPro Core Certification"
+issuer = "snowflake"
+level = "associate"
+url = "https://achieve.snowflake.com/e0f74ad0-0363-43d3-b15a-d3a1457dd03b#acc.kGox1lnU"
+
+[[certifications]]
+id = "mongodb-si"
+code = "SIA"
+name = "MongoDB SI Associate"
+issuer = "mongodb"
+level = "associate"
+url = "https://learn.mongodb.com/c/aPi3OPbHRg2Fvwa6oyV8Vw"
+
+[[certifications]]
+id = "ai-102"
+code = "AI-102"
+name = "Azure AI Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B62389D156A906D1?sharingId=87E510F2D20A449"
+signature = true
+
+[[certifications]]
+id = "dp-100"
+code = "DP-100"
+name = "Azure Data Scientist Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/2434178B458695AA?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-203"
+code = "DP-203"
+name = "Azure Data Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4744DA45C602D5B?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-300"
+code = "DP-300"
+name = "Azure Database Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/74F205608A5B279B?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-500"
+code = "DP-500"
+name = "Azure Enterprise Data Analyst Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E76B513C89A774DD?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-600"
+code = "DP-600"
+name = "Fabric Analytics Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/515934CFC19A811A?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-700"
+code = "DP-700"
+name = "Fabric Data Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/DE7D499CB93F5234?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-300"
+code = "PL-300"
+name = "Power BI Data Analyst Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F976A67D15231691?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-104"
+code = "AZ-104"
+name = "Azure Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/445CD37E604797D9?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-204"
+code = "AZ-204"
+name = "Azure Developer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/DF038873E69AA2FA?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-500"
+code = "AZ-500"
+name = "Azure Security Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/76D7ADA80914D779?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-700"
+code = "AZ-700"
+name = "Azure Network Engineer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/7678A0CA1AC224F4?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-800"
+code = "AZ-800"
+name = "Windows Server Hybrid Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F354DB29B5CA74B9?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "sc-200"
+code = "SC-200"
+name = "Security Operations Analyst Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4412113A1DAADE6?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "sc-300"
+code = "SC-300"
+name = "Identity and Access Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E0248AAEFB53BC67?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "sc-400"
+code = "SC-400"
+name = "Information Protection & Compliance Administrator"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B49B4521EE339D35?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "md-102"
+code = "MD-102"
+name = "Microsoft 365 Endpoint Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/5B5E772E75E60D61?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "ms-700"
+code = "MS-700"
+name = "Microsoft 365 Teams Administrator Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/68EAD72ACE8F283B?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "gh-300"
+code = "GH-300"
+name = "GitHub Copilot"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/744029EEBC8C6F59?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-100"
+code = "PL-100"
+name = "Power Platform App Maker Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/6B7F7727DABB1A41?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-200"
+code = "PL-200"
+name = "Power Platform Functional Consultant Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/9D452055BE1056D?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-400"
+code = "PL-400"
+name = "Power Platform Developer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/13E943893C5FB917?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-210"
+code = "MB-210"
+name = "Dynamics 365 Sales Functional Consultant Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/6EBEF3ED62A76AEA?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-220"
+code = "MB-220"
+name = "Dynamics 365 Customer Insights Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B81C87BBC8A3E9F9?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-230"
+code = "MB-230"
+name = "Dynamics 365 Customer Service Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/C3AEE54273511B98?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-240"
+code = "MB-240"
+name = "Dynamics 365 Field Service Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B2E007F3F5999476?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-310"
+code = "MB-310"
+name = "Dynamics 365 Finance Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/58D65B031FB1E141?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-330"
+code = "MB-330"
+name = "Dynamics 365 Supply Chain Management Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4D9F0C46CB8C683?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-500"
+code = "MB-500"
+name = "Dynamics 365 Finance & Operations Apps Developer Associate"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/8FAD447A2EE7438F?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "mb-800"
+code = "MB-800"
+name = "Dynamics 365 Business Central Functional Consultant"
+issuer = "microsoft"
+level = "associate"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E90891A2F0C3A510?sharingId=87E510F2D20A449"
+
+# --- Specialty -------------------------------------------------------------
+[[certifications]]
+id = "aws-ans"
+code = "ANS"
+name = "AWS Certified Advanced Networking – Specialty"
+issuer = "aws"
+level = "specialty"
+url = "https://www.credly.com/badges/ff0365d6-a240-46a2-888b-fb72c0d9c8d6/public_url"
+
+[[certifications]]
+id = "snowpro-genai"
+code = "GES"
+name = "SnowPro Specialty: Gen AI"
+issuer = "snowflake"
+level = "specialty"
+url = "https://achieve.snowflake.com/aec2a575-7ec6-4c11-8a46-b064fd0a7c10"
+signature = true
+
+[[certifications]]
+id = "az-140"
+code = "AZ-140"
+name = "Azure Virtual Desktop Specialty"
+issuer = "microsoft"
+level = "specialty"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/C3CD90E1334A3D6A?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "dp-420"
+code = "DP-420"
+name = "Azure Cosmos DB Developer Specialty"
+issuer = "microsoft"
+level = "specialty"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/81A6AF64F2666BCD?sharingId=87E510F2D20A449"
+
+# --- Professional & Advanced -----------------------------------------------
+[[certifications]]
+id = "gcp-pca"
+code = "PCA"
+name = "Professional Cloud Architect"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/f486243e-ddce-4a98-bb96-20a7b54f9f1b/public_url"
+signature = true
+
+[[certifications]]
+id = "gcp-pmle"
+code = "PMLE"
+name = "Professional Machine Learning Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/877f3676-e647-4df5-8845-f566ea7f0c1e/public_url"
+signature = true
+
+[[certifications]]
+id = "gcp-pde"
+code = "PDE"
+name = "Professional Data Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/50633dd1-dc56-4984-9d20-9486b16899c1/public_url"
+
+[[certifications]]
+id = "gcp-pcd"
+code = "PCD"
+name = "Professional Cloud Developer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/e6067b76-8cf4-4238-800a-15771a747efd/public_url"
+
+[[certifications]]
+id = "gcp-pcdoe"
+code = "PCDOE"
+name = "Professional Cloud DevOps Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/7cefb295-0790-4b38-bfc7-9876bc521e98/public_url"
+
+[[certifications]]
+id = "gcp-pcne"
+code = "PCNE"
+name = "Professional Cloud Network Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/62add79a-0e68-4fe1-97c4-00ad9f427255/public_url"
+
+[[certifications]]
+id = "gcp-pcse"
+code = "PCSE"
+name = "Professional Cloud Security Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/cb951777-bbbc-4a04-a44e-38b3e4409cb0/public_url"
+
+[[certifications]]
+id = "gcp-pcdb"
+code = "PCDB"
+name = "Professional Cloud Database Engineer"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/8d3b2f12-fab4-4a12-8a27-3e6a7447fdce/public_url"
+
+[[certifications]]
+id = "gcp-pgwa"
+code = "PGWA"
+name = "Professional Google Workspace Administrator"
+issuer = "google"
+level = "professional"
+url = "https://www.credly.com/badges/609ea3c1-a21c-406b-aaea-58b0a4942e95/public_url"
+
+[[certifications]]
+id = "snowpro-architect"
+code = "ARA"
+name = "SnowPro Advanced: Architect"
+issuer = "snowflake"
+level = "professional"
+url = "https://achieve.snowflake.com/9d19adca-a1d8-4d05-8f0c-fd22356797aa"
+
+[[certifications]]
+id = "snowpro-admin"
+code = "ADA"
+name = "SnowPro Advanced: Administrator"
+issuer = "snowflake"
+level = "professional"
+url = "https://achieve.snowflake.com/b30b4566-d900-4322-aa31-9f3568ed4174"
+
+[[certifications]]
+id = "snowpro-data-engineer"
+code = "DEA"
+name = "SnowPro Advanced: Data Engineer"
+issuer = "snowflake"
+level = "professional"
+url = "https://achieve.snowflake.com/40d34f67-48bf-4f40-ad5b-6623f83d3048"
+
+[[certifications]]
+id = "snowpro-data-scientist"
+code = "DSA"
+name = "SnowPro Advanced: Data Scientist"
+issuer = "snowflake"
+level = "professional"
+url = "https://achieve.snowflake.com/129c01d8-d301-4963-baa8-e22646cbf6c0"
+
+[[certifications]]
+id = "snowpro-data-analyst"
+code = "DAA"
+name = "SnowPro Advanced: Data Analyst"
+issuer = "snowflake"
+level = "professional"
+url = "https://achieve.snowflake.com/2a08d55e-22db-465d-98e9-95962e951a05"
+
+# --- Expert ----------------------------------------------------------------
+[[certifications]]
+id = "mb-700"
+code = "MB-700"
+name = "Dynamics 365 Finance & Operations Solution Architect Expert"
+issuer = "microsoft"
+level = "expert"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/697885B17EC9F884?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "pl-600"
+code = "PL-600"
+name = "Power Platform Solution Architect Expert"
+issuer = "microsoft"
+level = "expert"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/75D421519F179C98?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-400"
+code = "AZ-400"
+name = "DevOps Engineer Expert"
+issuer = "microsoft"
+level = "expert"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/14B72377FE073413?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "sc-100"
+code = "SC-100"
+name = "Cybersecurity Architect Expert"
+issuer = "microsoft"
+level = "expert"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B707C966F0C9C77D?sharingId=87E510F2D20A449"
+
+[[certifications]]
+id = "az-305"
+code = "AZ-305"
+name = "Azure Solutions Architect Expert"
+issuer = "microsoft"
+level = "expert"
+url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B178CAC5C8FCAD0C?sharingId=87E510F2D20A449"
+signature = true
+
+# --- No. 74 ----------------------------------------------------------------
+# The portfolio lists 74 PDF-backed credentials; 73 issuer links were supplied.
+# Fill in code/name/issuer/level/url when the 74th link is available and
+# remove `pending`.
+[[certifications]]
+id = "pending-74"
+code = "?"
+name = "Credential No. 74"
+issuer = "pending"
+level = "pending"
+url = ""
+pending = true
