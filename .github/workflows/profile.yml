@@ -1,0 +1,24 @@
+name: profile
+
+# Keeps the generated profile assets honest: the SVGs and the vault page must
+# match data/profile.toml, and every image the READMEs reference must exist.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generated files are up to date
+        run: python3 scripts/build.py --check
