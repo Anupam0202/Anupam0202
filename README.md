@@ -202,13 +202,13 @@ Quotas, cooldowns and bounded retries keep AI cost predictable, and fail closed 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/mastery-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/mastery-light.svg">
-  <img alt="The Periodic Table of Mastery: 74 credentials laid out like chemical elements, from fundamentals (lightest) to expert (heaviest). Microsoft 45, Google Cloud 14, Snowflake 7, AWS 3, Databricks 2, Anthropic 1, MongoDB 1. 11 fundamentals, 39 associate, 4 specialty, 14 professional and 5 expert credentials; number 74 is awaiting its public link." src="./assets/mastery-light.svg" width="100%">
+  <img alt="The Periodic Table of Mastery: 74 credentials laid out like chemical elements, from fundamentals (lightest) to expert (heaviest). Microsoft 46, Google Cloud 14, Snowflake 7, AWS 3, Databricks 2, Anthropic 1, MongoDB 1. 11 fundamentals, 39 associate, 5 specialty, 14 professional and 5 expert credentials, ending with AZ-305 Azure Solutions Architect Expert at number 74." src="./assets/mastery-light.svg" width="100%">
 </picture>
 </a>
 
 <p align="center"><b>74 credentials · 7 ecosystems · 5 expert · 14 professional · all issuer-verifiable</b></p>
 
-The table is ordered like the real one: **light elements are fundamentals, heavy ones are expert-level.** Element 1 is AZ-900; elements 69 to 73 are five Microsoft Expert certifications, ending with AZ-305. Tap any signature credential below to verify it now.
+The table is ordered like the real one: **light elements are fundamentals, heavy ones are expert-level.** Element 1 is AZ-900. Elements 70 to 74 are five Microsoft Expert certifications, and the heaviest, AZ-305, sits in tungsten's slot. Tap any signature credential below to verify it now, or open its certificate in the vault.
 
 <p align="center">
 <a href="https://www.credly.com/badges/abba82dd-73e2-46b7-967c-2ddbbfe40126/public_url"><img alt="Verify: AWS Certified Machine Learning Engineer – Associate" src="./assets/vault/signature/aws-mla.svg" width="49%"></a>

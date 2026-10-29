@@ -385,11 +385,17 @@ layer = "Enterprise integrations"
 work = ["Jira", "ServiceNow", "Confluence", "SharePoint", "Splunk", "GitHub"]
 repo = []
 
+[vault]
+pdf_base = "https://anupam-roy.vercel.app/"
+gallery = "https://anupam-roy.vercel.app/credentials"
+
 # ---------------------------------------------------------------------------
 # Certifications, in "atomic" order: lightest (fundamentals) to heaviest
 # (expert). The position in this list is the tile number on the periodic
-# table. Optional: drop a PDF at certificates/<id>.pdf and the vault links it.
+# table. `pdf` is the certificate's path on the portfolio (served from
+# vault.pdf_base); `issued` is the issue date printed on that PDF.
 # levels: fundamentals | associate | specialty | professional | expert
+# Optional `label` shows a different level name without changing the order.
 # ---------------------------------------------------------------------------
 
 # --- Fundamentals ----------------------------------------------------------
@@ -400,6 +406,8 @@ name = "Azure Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B120773C1846A17?sharingId=87E510F2D20A449"
+issued = "2023-05-26"
+pdf = "certs/microsoft-azure-fundamentals.pdf"
 
 [[certifications]]
 id = "ai-900"
@@ -408,6 +416,8 @@ name = "Azure AI Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/1CFE13ABC4888ED6?sharingId=87E510F2D20A449"
+issued = "2023-05-29"
+pdf = "certs/microsoft-azure-ai-fundamentals.pdf"
 
 [[certifications]]
 id = "dp-900"
@@ -416,6 +426,8 @@ name = "Azure Data Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/3884E398D8364524?sharingId=87E510F2D20A449"
+issued = "2023-06-07"
+pdf = "certs/microsoft-azure-data-fundamentals.pdf"
 
 [[certifications]]
 id = "sc-900"
@@ -424,6 +436,8 @@ name = "Security, Compliance & Identity Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/FBF4BC569BB1E212?sharingId=87E510F2D20A449"
+issued = "2023-07-05"
+pdf = "certs/microsoft-security-compliance-identity-fundamentals.pdf"
 
 [[certifications]]
 id = "pl-900"
@@ -432,6 +446,8 @@ name = "Power Platform Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/63CE8D63F6154129?sharingId=87E510F2D20A449"
+issued = "2023-06-15"
+pdf = "certs/microsoft-power-platform-fundamentals.pdf"
 
 [[certifications]]
 id = "ms-900"
@@ -440,6 +456,8 @@ name = "Microsoft 365 Fundamentals"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/2E020411669424B5?sharingId=87E510F2D20A449"
+issued = "2023-06-11"
+pdf = "certs/microsoft-m365-fundamentals.pdf"
 
 [[certifications]]
 id = "mb-910"
@@ -448,6 +466,8 @@ name = "Dynamics 365 Fundamentals (CRM)"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/3CB039D711EC3B20?sharingId=87E510F2D20A449"
+issued = "2024-01-24"
+pdf = "certs/microsoft-dynamics-365-fundamentals-crm.pdf"
 
 [[certifications]]
 id = "mb-920"
@@ -456,6 +476,8 @@ name = "Dynamics 365 Fundamentals (ERP)"
 issuer = "microsoft"
 level = "fundamentals"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/A84FD8DAFD442D14?sharingId=87E510F2D20A449"
+issued = "2023-12-28"
+pdf = "certs/microsoft-dynamics-365-fundamentals-erp.pdf"
 
 [[certifications]]
 id = "aws-clf"
@@ -464,6 +486,8 @@ name = "AWS Certified Cloud Practitioner"
 issuer = "aws"
 level = "fundamentals"
 url = "https://www.credly.com/badges/c66f5645-8a07-449d-b2ac-7629e892702a/public_url"
+issued = "2024-12-22"
+pdf = "certs/aws-cloud-practitioner.pdf"
 
 [[certifications]]
 id = "gcp-cdl"
@@ -472,6 +496,8 @@ name = "Cloud Digital Leader"
 issuer = "google"
 level = "fundamentals"
 url = "https://www.credly.com/badges/fc7bde6f-a96b-4ab8-846d-ef8c22cf11b7/public_url"
+issued = "2024-12-21"
+pdf = "certs/google-cloud-digital-leader.pdf"
 
 [[certifications]]
 id = "gcp-gail"
@@ -480,6 +506,8 @@ name = "Generative AI Leader"
 issuer = "google"
 level = "fundamentals"
 url = "https://www.credly.com/badges/4b01e73a-8e53-4d6c-97ed-c0a249b4e086/public_url"
+issued = "2025-07-03"
+pdf = "certs/google-generative-ai-leader.pdf"
 
 # --- Associate -------------------------------------------------------------
 [[certifications]]
@@ -489,6 +517,8 @@ name = "AWS Certified Machine Learning Engineer – Associate"
 issuer = "aws"
 level = "associate"
 url = "https://www.credly.com/badges/abba82dd-73e2-46b7-967c-2ddbbfe40126/public_url"
+issued = "2026-05-01"
+pdf = "certs/aws-ml-engineer-associate.pdf"
 signature = true
 
 [[certifications]]
@@ -497,7 +527,10 @@ code = "CCA"
 name = "Claude Certified Architect – Foundations"
 issuer = "anthropic"
 level = "associate"
+label = "Foundations"
 url = "https://verify.skilljar.com/c/v3bg7pbc87fn"
+issued = "2026-04-27"
+pdf = "certs/claude-certified-architect-foundations.pdf"
 signature = true
 
 [[certifications]]
@@ -507,6 +540,8 @@ name = "Databricks Certified Generative AI Engineer Associate"
 issuer = "databricks"
 level = "associate"
 url = "https://credentials.databricks.com/65e9a608-48dd-43e8-8f63-134231a861a3"
+issued = "2026-01-29"
+pdf = "certs/databricks-genai-engineer-associate.pdf"
 signature = true
 
 [[certifications]]
@@ -516,6 +551,8 @@ name = "Databricks Certified Data Engineer Associate"
 issuer = "databricks"
 level = "associate"
 url = "https://credentials.databricks.com/42c2f101-be3c-4ecc-8ae4-ab4959b14ef7"
+issued = "2024-06-19"
+pdf = "certs/databricks-data-engineer-associate.pdf"
 
 [[certifications]]
 id = "gcp-ace"
@@ -524,6 +561,8 @@ name = "Associate Cloud Engineer"
 issuer = "google"
 level = "associate"
 url = "https://www.credly.com/badges/3b6ff1dd-7e4d-4763-8ae9-72df6a479cdf/public_url"
+issued = "2024-05-24"
+pdf = "certs/google-associate-cloud-engineer.pdf"
 
 [[certifications]]
 id = "gcp-adp"
@@ -532,6 +571,8 @@ name = "Associate Data Practitioner"
 issuer = "google"
 level = "associate"
 url = "https://www.credly.com/badges/34d0cf23-4279-42df-b258-ca2fc211e987/public_url"
+issued = "2025-02-21"
+pdf = "certs/google-associate-data-practitioner.pdf"
 
 [[certifications]]
 id = "gcp-agwa"
@@ -540,6 +581,8 @@ name = "Associate Google Workspace Administrator"
 issuer = "google"
 level = "associate"
 url = "https://www.credly.com/badges/080d4d45-da7e-4ec9-9591-0eb283887c28/public_url"
+issued = "2025-02-21"
+pdf = "certs/google-associate-gws-admin.pdf"
 
 [[certifications]]
 id = "snowpro-core"
@@ -547,7 +590,9 @@ code = "COF"
 name = "SnowPro Core Certification"
 issuer = "snowflake"
 level = "associate"
-url = "https://achieve.snowflake.com/e0f74ad0-0363-43d3-b15a-d3a1457dd03b#acc.kGox1lnU"
+url = "https://achieve.snowflake.com/e0f74ad0-0363-43d3-b15a-d3a1457dd03b"
+issued = "2025-04-27"
+pdf = "certs/snowflake-snowpro-core.pdf"
 
 [[certifications]]
 id = "mongodb-si"
@@ -556,6 +601,8 @@ name = "MongoDB SI Associate"
 issuer = "mongodb"
 level = "associate"
 url = "https://learn.mongodb.com/c/aPi3OPbHRg2Fvwa6oyV8Vw"
+issued = "2024-06-18"
+pdf = "certs/mongodb-si-associate.pdf"
 
 [[certifications]]
 id = "ai-102"
@@ -564,6 +611,8 @@ name = "Azure AI Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B62389D156A906D1?sharingId=87E510F2D20A449"
+issued = "2023-06-01"
+pdf = "certs/microsoft-azure-ai-engineer-associate.pdf"
 signature = true
 
 [[certifications]]
@@ -573,6 +622,8 @@ name = "Azure Data Scientist Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/2434178B458695AA?sharingId=87E510F2D20A449"
+issued = "2024-01-08"
+pdf = "certs/microsoft-azure-data-scientist-associate.pdf"
 
 [[certifications]]
 id = "dp-203"
@@ -581,6 +632,8 @@ name = "Azure Data Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4744DA45C602D5B?sharingId=87E510F2D20A449"
+issued = "2024-01-09"
+pdf = "certs/microsoft-azure-data-engineer-associate.pdf"
 
 [[certifications]]
 id = "dp-300"
@@ -589,6 +642,8 @@ name = "Azure Database Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/74F205608A5B279B?sharingId=87E510F2D20A449"
+issued = "2024-02-01"
+pdf = "certs/microsoft-azure-database-admin-associate.pdf"
 
 [[certifications]]
 id = "dp-500"
@@ -597,6 +652,8 @@ name = "Azure Enterprise Data Analyst Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E76B513C89A774DD?sharingId=87E510F2D20A449"
+issued = "2024-01-09"
+pdf = "certs/microsoft-azure-enterprise-data-analyst.pdf"
 
 [[certifications]]
 id = "dp-600"
@@ -605,6 +662,8 @@ name = "Fabric Analytics Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/515934CFC19A811A?sharingId=87E510F2D20A449"
+issued = "2024-08-30"
+pdf = "certs/microsoft-fabric-analytics-engineer-associate.pdf"
 
 [[certifications]]
 id = "dp-700"
@@ -613,6 +672,8 @@ name = "Fabric Data Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/DE7D499CB93F5234?sharingId=87E510F2D20A449"
+issued = "2025-02-10"
+pdf = "certs/microsoft-fabric-data-engineer-associate.pdf"
 
 [[certifications]]
 id = "pl-300"
@@ -621,6 +682,8 @@ name = "Power BI Data Analyst Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F976A67D15231691?sharingId=87E510F2D20A449"
+issued = "2024-04-23"
+pdf = "certs/microsoft-power-bi-data-analyst-associate.pdf"
 
 [[certifications]]
 id = "az-104"
@@ -629,6 +692,8 @@ name = "Azure Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/445CD37E604797D9?sharingId=87E510F2D20A449"
+issued = "2023-08-25"
+pdf = "certs/microsoft-azure-administrator-associate.pdf"
 
 [[certifications]]
 id = "az-204"
@@ -637,6 +702,8 @@ name = "Azure Developer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/DF038873E69AA2FA?sharingId=87E510F2D20A449"
+issued = "2023-09-13"
+pdf = "certs/microsoft-azure-developer-associate.pdf"
 
 [[certifications]]
 id = "az-500"
@@ -645,6 +712,8 @@ name = "Azure Security Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/76D7ADA80914D779?sharingId=87E510F2D20A449"
+issued = "2024-01-04"
+pdf = "certs/microsoft-azure-security-engineer-associate.pdf"
 
 [[certifications]]
 id = "az-700"
@@ -653,6 +722,8 @@ name = "Azure Network Engineer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/7678A0CA1AC224F4?sharingId=87E510F2D20A449"
+issued = "2024-01-05"
+pdf = "certs/microsoft-azure-network-engineer-associate.pdf"
 
 [[certifications]]
 id = "az-800"
@@ -661,6 +732,8 @@ name = "Windows Server Hybrid Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F354DB29B5CA74B9?sharingId=87E510F2D20A449"
+issued = "2024-01-06"
+pdf = "certs/microsoft-windows-server-hybrid-admin-associate.pdf"
 
 [[certifications]]
 id = "sc-200"
@@ -669,6 +742,8 @@ name = "Security Operations Analyst Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4412113A1DAADE6?sharingId=87E510F2D20A449"
+issued = "2024-02-09"
+pdf = "certs/microsoft-security-operations-analyst-associate.pdf"
 
 [[certifications]]
 id = "sc-300"
@@ -677,6 +752,8 @@ name = "Identity and Access Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E0248AAEFB53BC67?sharingId=87E510F2D20A449"
+issued = "2024-02-08"
+pdf = "certs/microsoft-identity-access-admin-associate.pdf"
 
 [[certifications]]
 id = "sc-400"
@@ -685,6 +762,8 @@ name = "Information Protection & Compliance Administrator"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B49B4521EE339D35?sharingId=87E510F2D20A449"
+issued = "2024-02-08"
+pdf = "certs/microsoft-info-protection-compliance-admin.pdf"
 
 [[certifications]]
 id = "md-102"
@@ -693,6 +772,8 @@ name = "Microsoft 365 Endpoint Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/5B5E772E75E60D61?sharingId=87E510F2D20A449"
+issued = "2024-08-31"
+pdf = "certs/microsoft-m365-endpoint-admin-associate.pdf"
 
 [[certifications]]
 id = "ms-700"
@@ -701,6 +782,8 @@ name = "Microsoft 365 Teams Administrator Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/68EAD72ACE8F283B?sharingId=87E510F2D20A449"
+issued = "2024-09-19"
+pdf = "certs/microsoft-m365-teams-admin-associate.pdf"
 
 [[certifications]]
 id = "gh-300"
@@ -709,6 +792,8 @@ name = "GitHub Copilot"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/744029EEBC8C6F59?sharingId=87E510F2D20A449"
+issued = "2025-12-24"
+pdf = "certs/microsoft-github-copilot.pdf"
 
 [[certifications]]
 id = "pl-100"
@@ -717,6 +802,8 @@ name = "Power Platform App Maker Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/6B7F7727DABB1A41?sharingId=87E510F2D20A449"
+issued = "2024-02-24"
+pdf = "certs/microsoft-power-platform-app-maker-associate.pdf"
 
 [[certifications]]
 id = "pl-200"
@@ -725,6 +812,8 @@ name = "Power Platform Functional Consultant Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/9D452055BE1056D?sharingId=87E510F2D20A449"
+issued = "2024-04-24"
+pdf = "certs/microsoft-power-platform-functional-consultant.pdf"
 
 [[certifications]]
 id = "pl-400"
@@ -733,6 +822,8 @@ name = "Power Platform Developer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/13E943893C5FB917?sharingId=87E510F2D20A449"
+issued = "2024-10-05"
+pdf = "certs/microsoft-power-platform-developer-associate.pdf"
 
 [[certifications]]
 id = "mb-210"
@@ -741,6 +832,8 @@ name = "Dynamics 365 Sales Functional Consultant Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/6EBEF3ED62A76AEA?sharingId=87E510F2D20A449"
+issued = "2024-02-02"
+pdf = "certs/microsoft-dynamics-365-sales-fc.pdf"
 
 [[certifications]]
 id = "mb-220"
@@ -749,6 +842,8 @@ name = "Dynamics 365 Customer Insights Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B81C87BBC8A3E9F9?sharingId=87E510F2D20A449"
+issued = "2024-02-03"
+pdf = "certs/microsoft-dynamics-365-customer-insights-journeys.pdf"
 
 [[certifications]]
 id = "mb-230"
@@ -757,6 +852,8 @@ name = "Dynamics 365 Customer Service Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/C3AEE54273511B98?sharingId=87E510F2D20A449"
+issued = "2024-02-05"
+pdf = "certs/microsoft-dynamics-365-customer-service-fc.pdf"
 
 [[certifications]]
 id = "mb-240"
@@ -765,6 +862,8 @@ name = "Dynamics 365 Field Service Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B2E007F3F5999476?sharingId=87E510F2D20A449"
+issued = "2024-02-07"
+pdf = "certs/microsoft-dynamics-365-field-service-fc.pdf"
 
 [[certifications]]
 id = "mb-310"
@@ -773,6 +872,8 @@ name = "Dynamics 365 Finance Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/58D65B031FB1E141?sharingId=87E510F2D20A449"
+issued = "2024-02-23"
+pdf = "certs/microsoft-dynamics-365-finance-fc.pdf"
 
 [[certifications]]
 id = "mb-330"
@@ -781,6 +882,8 @@ name = "Dynamics 365 Supply Chain Management Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/F4D9F0C46CB8C683?sharingId=87E510F2D20A449"
+issued = "2024-02-23"
+pdf = "certs/microsoft-dynamics-365-supply-chain-fc.pdf"
 
 [[certifications]]
 id = "mb-500"
@@ -789,6 +892,8 @@ name = "Dynamics 365 Finance & Operations Apps Developer Associate"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/8FAD447A2EE7438F?sharingId=87E510F2D20A449"
+issued = "2024-02-06"
+pdf = "certs/microsoft-dynamics-365-fo-apps-developer.pdf"
 
 [[certifications]]
 id = "mb-800"
@@ -797,6 +902,8 @@ name = "Dynamics 365 Business Central Functional Consultant"
 issuer = "microsoft"
 level = "associate"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/E90891A2F0C3A510?sharingId=87E510F2D20A449"
+issued = "2024-02-15"
+pdf = "certs/microsoft-dynamics-365-business-central-fc.pdf"
 
 # --- Specialty -------------------------------------------------------------
 [[certifications]]
@@ -806,6 +913,8 @@ name = "AWS Certified Advanced Networking – Specialty"
 issuer = "aws"
 level = "specialty"
 url = "https://www.credly.com/badges/ff0365d6-a240-46a2-888b-fb72c0d9c8d6/public_url"
+issued = "2025-12-22"
+pdf = "certs/aws-advanced-networking-specialty.pdf"
 
 [[certifications]]
 id = "snowpro-genai"
@@ -814,6 +923,8 @@ name = "SnowPro Specialty: Gen AI"
 issuer = "snowflake"
 level = "specialty"
 url = "https://achieve.snowflake.com/aec2a575-7ec6-4c11-8a46-b064fd0a7c10"
+issued = "2025-09-22"
+pdf = "certs/snowflake-snowpro-specialty-gen-ai.pdf"
 signature = true
 
 [[certifications]]
@@ -823,6 +934,8 @@ name = "Azure Virtual Desktop Specialty"
 issuer = "microsoft"
 level = "specialty"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/C3CD90E1334A3D6A?sharingId=87E510F2D20A449"
+issued = "2024-08-31"
+pdf = "certs/microsoft-azure-virtual-desktop-specialty.pdf"
 
 [[certifications]]
 id = "dp-420"
@@ -831,6 +944,18 @@ name = "Azure Cosmos DB Developer Specialty"
 issuer = "microsoft"
 level = "specialty"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/81A6AF64F2666BCD?sharingId=87E510F2D20A449"
+issued = "2024-02-12"
+pdf = "certs/microsoft-azure-cosmos-db-developer-specialty.pdf"
+
+[[certifications]]
+id = "az-120"
+code = "AZ-120"
+name = "Azure for SAP Workloads Specialty"
+issuer = "microsoft"
+level = "specialty"
+url = "https://learn.microsoft.com/en-us/users/royanupam-9387/credentials/76382824e0e2ddf4"
+issued = "2026-01-29"
+pdf = "certs/microsoft-azure-sap-workloads-specialty.pdf"
 
 # --- Professional & Advanced -----------------------------------------------
 [[certifications]]
@@ -840,6 +965,8 @@ name = "Professional Cloud Architect"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/f486243e-ddce-4a98-bb96-20a7b54f9f1b/public_url"
+issued = "2024-07-13"
+pdf = "certs/google-professional-cloud-architect.pdf"
 signature = true
 
 [[certifications]]
@@ -849,6 +976,8 @@ name = "Professional Machine Learning Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/877f3676-e647-4df5-8845-f566ea7f0c1e/public_url"
+issued = "2024-10-11"
+pdf = "certs/google-professional-ml-engineer.pdf"
 signature = true
 
 [[certifications]]
@@ -858,6 +987,8 @@ name = "Professional Data Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/50633dd1-dc56-4984-9d20-9486b16899c1/public_url"
+issued = "2024-07-16"
+pdf = "certs/google-professional-data-engineer.pdf"
 
 [[certifications]]
 id = "gcp-pcd"
@@ -866,6 +997,8 @@ name = "Professional Cloud Developer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/e6067b76-8cf4-4238-800a-15771a747efd/public_url"
+issued = "2024-10-25"
+pdf = "certs/google-professional-cloud-developer.pdf"
 
 [[certifications]]
 id = "gcp-pcdoe"
@@ -874,6 +1007,8 @@ name = "Professional Cloud DevOps Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/7cefb295-0790-4b38-bfc7-9876bc521e98/public_url"
+issued = "2024-10-26"
+pdf = "certs/google-professional-cloud-devops-engineer.pdf"
 
 [[certifications]]
 id = "gcp-pcne"
@@ -882,6 +1017,8 @@ name = "Professional Cloud Network Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/62add79a-0e68-4fe1-97c4-00ad9f427255/public_url"
+issued = "2024-11-01"
+pdf = "certs/google-professional-cloud-network-engineer.pdf"
 
 [[certifications]]
 id = "gcp-pcse"
@@ -890,6 +1027,8 @@ name = "Professional Cloud Security Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/cb951777-bbbc-4a04-a44e-38b3e4409cb0/public_url"
+issued = "2024-11-01"
+pdf = "certs/google-professional-cloud-security-engineer.pdf"
 
 [[certifications]]
 id = "gcp-pcdb"
@@ -898,6 +1037,8 @@ name = "Professional Cloud Database Engineer"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/8d3b2f12-fab4-4a12-8a27-3e6a7447fdce/public_url"
+issued = "2024-11-01"
+pdf = "certs/google-professional-cloud-database-engineer.pdf"
 
 [[certifications]]
 id = "gcp-pgwa"
@@ -906,6 +1047,8 @@ name = "Professional Google Workspace Administrator"
 issuer = "google"
 level = "professional"
 url = "https://www.credly.com/badges/609ea3c1-a21c-406b-aaea-58b0a4942e95/public_url"
+issued = "2024-11-01"
+pdf = "certs/google-professional-gws-admin.pdf"
 
 [[certifications]]
 id = "snowpro-architect"
@@ -914,6 +1057,8 @@ name = "SnowPro Advanced: Architect"
 issuer = "snowflake"
 level = "professional"
 url = "https://achieve.snowflake.com/9d19adca-a1d8-4d05-8f0c-fd22356797aa"
+issued = "2025-09-22"
+pdf = "certs/snowflake-snowpro-advanced-architect.pdf"
 
 [[certifications]]
 id = "snowpro-admin"
@@ -922,6 +1067,8 @@ name = "SnowPro Advanced: Administrator"
 issuer = "snowflake"
 level = "professional"
 url = "https://achieve.snowflake.com/b30b4566-d900-4322-aa31-9f3568ed4174"
+issued = "2025-09-27"
+pdf = "certs/snowflake-snowpro-advanced-administrator.pdf"
 
 [[certifications]]
 id = "snowpro-data-engineer"
@@ -930,6 +1077,8 @@ name = "SnowPro Advanced: Data Engineer"
 issuer = "snowflake"
 level = "professional"
 url = "https://achieve.snowflake.com/40d34f67-48bf-4f40-ad5b-6623f83d3048"
+issued = "2025-09-27"
+pdf = "certs/snowflake-snowpro-advanced-data-engineer.pdf"
 
 [[certifications]]
 id = "snowpro-data-scientist"
@@ -938,6 +1087,8 @@ name = "SnowPro Advanced: Data Scientist"
 issuer = "snowflake"
 level = "professional"
 url = "https://achieve.snowflake.com/129c01d8-d301-4963-baa8-e22646cbf6c0"
+issued = "2025-09-26"
+pdf = "certs/snowflake-snowpro-advanced-data-scientist.pdf"
 
 [[certifications]]
 id = "snowpro-data-analyst"
@@ -946,6 +1097,8 @@ name = "SnowPro Advanced: Data Analyst"
 issuer = "snowflake"
 level = "professional"
 url = "https://achieve.snowflake.com/2a08d55e-22db-465d-98e9-95962e951a05"
+issued = "2025-09-27"
+pdf = "certs/snowflake-snowpro-advanced-data-analyst.pdf"
 
 # --- Expert ----------------------------------------------------------------
 [[certifications]]
@@ -955,6 +1108,8 @@ name = "Dynamics 365 Finance & Operations Solution Architect Expert"
 issuer = "microsoft"
 level = "expert"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/697885B17EC9F884?sharingId=87E510F2D20A449"
+issued = "2024-03-02"
+pdf = "certs/microsoft-dynamics-365-fo-solution-architect-expert.pdf"
 
 [[certifications]]
 id = "pl-600"
@@ -963,6 +1118,8 @@ name = "Power Platform Solution Architect Expert"
 issuer = "microsoft"
 level = "expert"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/75D421519F179C98?sharingId=87E510F2D20A449"
+issued = "2024-04-24"
+pdf = "certs/microsoft-power-platform-solution-architect-expert.pdf"
 
 [[certifications]]
 id = "az-400"
@@ -971,6 +1128,8 @@ name = "DevOps Engineer Expert"
 issuer = "microsoft"
 level = "expert"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/14B72377FE073413?sharingId=87E510F2D20A449"
+issued = "2023-08-25"
+pdf = "certs/microsoft-devops-engineer-expert.pdf"
 
 [[certifications]]
 id = "sc-100"
@@ -979,6 +1138,8 @@ name = "Cybersecurity Architect Expert"
 issuer = "microsoft"
 level = "expert"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B707C966F0C9C77D?sharingId=87E510F2D20A449"
+issued = "2024-02-09"
+pdf = "certs/microsoft-cybersecurity-architect-expert.pdf"
 
 [[certifications]]
 id = "az-305"
@@ -987,17 +1148,6 @@ name = "Azure Solutions Architect Expert"
 issuer = "microsoft"
 level = "expert"
 url = "https://learn.microsoft.com/api/credentials/share/en-us/RoyAnupam-9387/B178CAC5C8FCAD0C?sharingId=87E510F2D20A449"
+issued = "2024-01-09"
+pdf = "certs/microsoft-azure-solutions-architect-expert.pdf"
 signature = true
-
-# --- No. 74 ----------------------------------------------------------------
-# The portfolio lists 74 PDF-backed credentials; 73 issuer links were supplied.
-# Fill in code/name/issuer/level/url when the 74th link is available and
-# remove `pending`.
-[[certifications]]
-id = "pending-74"
-code = "?"
-name = "Credential No. 74"
-issuer = "pending"
-level = "pending"
-url = ""
-pending = true

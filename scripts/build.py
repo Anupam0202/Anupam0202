@@ -211,6 +211,24 @@ LEVELS = {
     "pending": dict(label="Link pending", short="···", rank=0),
 }
 
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+
+
+def level_label(c) -> str:
+    """Display name for a credential's level (an optional `label` overrides the tier name)."""
+    return c.get("label") or LEVELS[c["level"]]["label"]
+
+
+def level_short(c) -> str:
+    label = c.get("label")
+    return {"Foundations": "FDN"}.get(label, label[:3].upper()) if label else LEVELS[c["level"]]["short"]
+
+
+def issued_month(c) -> str:
+    y, m, _ = c["issued"].split("-")
+    return f"{MONTHS[int(m) - 1]} {y}"
+
+
 BASE_CSS = (
     f"text{{font-family:{SANS}}}.m{{font-family:{MONO}}}"
     "@media (prefers-reduced-motion:reduce){*{animation:none!important}.pk{display:none}}"
@@ -979,7 +997,7 @@ def periodic_table(th, d, mode):
             g.append(text(S - 5, 12.5, iss["short"], 7.5, iss[ink], 700, True, "end"))
             code = c["code"]
             g.append(text(S / 2, 37.5, code, fit(code, S - 8, 16, bold=True), th["text"], 800, anchor="middle"))
-            g.append(text(S / 2, 51, LEVELS[c["level"]]["short"], 7.5, th["faint"], 700, True, "middle", ls=.6))
+            g.append(text(S / 2, 51, level_short(c), 7.5, th["faint"], 700, True, "middle", ls=.6))
         g.append("</g>")
         o.append("".join(g))
 
@@ -995,12 +1013,12 @@ def periodic_table(th, d, mode):
 def vault_tile(c, z):
     W, H = 168, 196
     iss = ISSUERS[c["issuer"]]
-    lvl = LEVELS[c["level"]]
     col, ink = iss["color"], iss["dark"]
     pending = c.get("pending")
     title = f"No. {z}: {c['name']}"
     desc = ("Verification link pending." if pending else
-            f"{iss['label']} · {lvl['label']} · {c['code']}. Opens the issuer's verification page.")
+            f"{iss['label']} · {level_label(c)} · {c['code']} · issued {issued_month(c)}. "
+            "Opens the issuer's verification page.")
     o = [svg_open(W, H, title, desc, "", f'<clipPath id="clip"><rect width="{W}" height="{H}" rx="14"/></clipPath>')]
     o.append(rect(0, 0, W, H, 14, NEUTRAL["bg"]))
     if pending:
@@ -1020,7 +1038,7 @@ def vault_tile(c, z):
     for line in nl:
         o.append(text(W / 2, yy, line, ns, "#D6E0EC", 650, anchor="middle"))
         yy += ns * 1.3
-    lab = ("★ " if c["level"] == "expert" else "") + lvl["label"].upper()
+    lab = ("★ " if c["level"] == "expert" else "") + level_label(c).upper()
     lab_size = fit(lab, W - 58, 9.5, mono=True, ls=.6)
     lw = tw(lab, lab_size, mono=True, ls=.6) + 16
     o.append(rect(12, H - 34, lw, 20, 10, col, None, extra='fill-opacity=".16"'))
@@ -1033,9 +1051,9 @@ def vault_tile(c, z):
 def signature_card(c, z):
     W, H = 560, 124
     iss = ISSUERS[c["issuer"]]
-    lvl = LEVELS[c["level"]]
     col, ink = iss["color"], iss["dark"]
-    o = [svg_open(W, H, c["name"], f"No. {z}: {c['name']} · {iss['label']} · {lvl['label']}. Opens the issuer's verification page.")]
+    o = [svg_open(W, H, c["name"], f"No. {z}: {c['name']} · {iss['label']} · {level_label(c)} · issued "
+                  f"{issued_month(c)}. Opens the issuer's verification page.")]
     o.append(rect(0, 0, W, H, 16, NEUTRAL["bg"]))
     o.append(rect(0, 0, W, H, 16, col, None, extra='fill-opacity=".06"'))
     o.append(rect(.75, .75, W - 1.5, H - 1.5, 16, "none", col, 1.3, extra='stroke-opacity=".5"'))
@@ -1048,8 +1066,8 @@ def signature_card(c, z):
     y0 = 52 if len(nl) == 2 else 62
     for i, line in enumerate(nl):
         o.append(text(132, y0 + i * ns * 1.3, line, ns, NEUTRAL["text"], 750))
-    meta = f"{iss['label'].upper()} · {lvl['label'].upper()}"
-    o.append(text(132, H - 20, meta, 10.5, NEUTRAL["muted"], 700, True, ls=1))
+    meta = f"{iss['label']} · {level_label(c)} · {issued_month(c)}".upper()
+    o.append(text(132, H - 20, meta, fit(meta, W - 250, 10.5, mono=True, ls=1), NEUTRAL["muted"], 700, True, ls=1))
     o.append(text(W - 18, H - 20, "VERIFY ↗", 11, ink, 700, True, "end", ls=1))
     o.append("</svg>")
     return "".join(o)
@@ -1080,9 +1098,9 @@ def footer(th, d):
 # ---------------------------------------------------------------------------
 # Certification vault (Markdown)
 # ---------------------------------------------------------------------------
-def pdf_for(c):
-    path = ROOT / "certificates" / f"{c['id']}.pdf"
-    return f"./certificates/{c['id']}.pdf" if path.exists() else None
+def pdf_for(d, c):
+    """Certificate PDF on the portfolio, which serves it with noindex headers."""
+    return d["vault"]["pdf_base"].rstrip("/") + "/" + c["pdf"].lstrip("/") if c.get("pdf") else None
 
 
 def vault_md(d):
@@ -1101,7 +1119,8 @@ def vault_md(d):
     out.append(f"> **{len(certs)} credentials across {len(counts)} ecosystems.** Every tile opens the issuer's own "
                "live verification page, so nothing here has to be taken on trust.")
     out.append("")
-    out.append(f"[← Back to profile](./README.md) · [Credly profile]({p['credly']}) · [Portfolio]({p['portfolio']})")
+    out.append(f"[← Back to profile](./README.md) · [Certificate gallery]({d['vault']['gallery']}) · "
+               f"[Credly profile]({p['credly']}) · [Portfolio]({p['portfolio']})")
     out.append("")
     out.append('<a href="#how-to-read-the-table">')
     out.append("<picture>")
@@ -1150,29 +1169,26 @@ def vault_md(d):
         out.append("")
     out.append("## Full index")
     out.append("")
-    out.append("<details>")
-    out.append(f"<summary><strong>All {len(certs)} credentials in one table</strong> (with the file names used for PDFs)</summary>")
+    out.append("Every row links to the issuer's live verification and to the certificate PDF itself.")
     out.append("")
-    out.append("| No. | Code | Credential | Issuer | Level | Verify | PDF |")
-    out.append("| ---: | --- | --- | --- | --- | --- | --- |")
+    out.append("<details>")
+    out.append(f"<summary><strong>All {len(certs)} credentials, with issue dates and PDFs</strong></summary>")
+    out.append("")
+    out.append("| No. | Code | Credential | Issuer | Level | Issued | Verify | Certificate |")
+    out.append("| ---: | --- | --- | --- | --- | --- | --- | --- |")
     for z, c in numbered:
         if c.get("pending"):
-            out.append(f"| {z} | — | {c['name']} | — | — | pending | — |")
+            out.append(f"| {z} | — | {c['name']} | — | — | — | pending | — |")
             continue
-        pdf = pdf_for(c)
-        pdf_cell = f"[PDF]({pdf})" if pdf else f"`{c['id']}.pdf`"
-        out.append(f"| {z} | `{c['code']}` | {c['name']} | {ISSUERS[c['issuer']]['label']} | "
-                   f"{LEVELS[c['level']]['label']} | [verify ↗]({c['url']}) | {pdf_cell} |")
+        pdf = pdf_for(d, c)
+        out.append(f"| {z} | `{c['code']}` | {c['name']} | {ISSUERS[c['issuer']]['label']} | {level_label(c)} | "
+                   f"{c['issued']} | [verify ↗]({c['url']}) | " + (f"[PDF]({pdf})" if pdf else "—") + " |")
     out.append("")
     out.append("</details>")
     out.append("")
-    out.append("## Adding certificate PDFs")
-    out.append("")
-    out.append("1. Save each certificate as `certificates/<file name>.pdf`, using the file name from the index above.")
-    out.append("2. Run `python3 scripts/build.py`. The index switches that row to a **PDF** link automatically.")
-    out.append("3. Commit the PDFs together with the regenerated files.")
-    out.append("")
-    out.append("> The issuer link stays the source of truth; a PDF is supporting evidence, not the verifier.")
+    out.append("> The issuer link is the source of truth; the PDF is supporting evidence. Issue dates are read from "
+               "each certificate. PDFs are hosted on the [portfolio](" + d["vault"]["gallery"] + "), which keeps them "
+               "out of search indexes.")
     out.append("")
     return "\n".join(out)
 
@@ -1200,6 +1216,15 @@ def validate(d):
             last = rank
             if not c["url"].startswith("https://"):
                 raise SystemExit(f"{c['id']} needs an https verification url")
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", c.get("issued", "")):
+                raise SystemExit(f"{c['id']} needs an issued date (YYYY-MM-DD)")
+            if not re.fullmatch(r"certs/[a-z0-9-]+\.pdf", c.get("pdf", "")):
+                raise SystemExit(f"{c['id']} needs a pdf path like certs/<name>.pdf")
+    pdfs = [c["pdf"] for c in certs if c.get("pdf")]
+    if len(pdfs) != len(set(pdfs)):
+        raise SystemExit("two credentials point at the same pdf")
+    if not d.get("vault", {}).get("pdf_base", "").startswith("https://"):
+        raise SystemExit("[vault] pdf_base must be an https url")
     if len(certs) > 118:
         raise SystemExit("the periodic table has room for 118 credentials")
 
