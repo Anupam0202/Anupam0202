@@ -20,8 +20,8 @@ README.md (hand-written) references these images ──┘
 
 | Task | Where |
 | --- | --- |
-| Add the 74th credential's link | Fill in the last `[[certifications]]` entry and remove `pending = true`. Keep it in lightest-to-heaviest order: the build refuses a list that is out of order. |
-| Add certificate PDFs | Save them as `certificates/<id>.pdf` (ids are listed in the vault index) and rebuild. The vault index links each PDF automatically. |
+| Add a credential | Add a `[[certifications]]` entry in its tier (lightest to heaviest; the build refuses a list out of order) with `url`, `issued` and `pdf`. The `pdf` path is the certificate's path on the portfolio, such as `certs/<name>.pdf`. |
+| Certificate PDFs | Served by the portfolio from `vault.pdf_base`, which sends `noindex` headers. Upload a new PDF to the portfolio first, then point `pdf` at it. |
 | Add a project card | Add a `[[projects]]` entry (`tier = "featured"`, `group = "agents"` or `"products"`), rebuild, then add its card to the matching grid in `README.md`. |
 | Change a headline number | `[[metrics]]` for the hero; the README text repeats a few numbers, so search it too. |
 
